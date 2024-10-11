@@ -24,5 +24,40 @@
 	<p><a href = "3_9">예제 3-9</a></p>
 	<p><a href = "3_10">예제 3-10</a></p>
 	<p><a href = "3_11">예제 3-11</a></p>
+	<hr></hr>
+	<p><a href = "4_1">예제 4-1</a></p>
+	<p><a href = "4_2">예제 4-2</a></p>
+	<p><a href = "4_3_1">예제 4-3-1</a></p>
+	<p><a href = "4_3_2">예제 4-3-2</a></p>
+	<p><a href = "4_4">예제 4-4</a></p>
+	<p><a href = "4_5">예제 4-5</a></p>
+	<p><a href = "4_6">예제 4-6</a></p>
+	<p><a href = "4_7">예제 4-7</a></p>
+	<p><a href = "4_8">예제 4-8</a></p>
+	<p><a href = "4_9">예제 4-9</a></p>
+	<p><a href = "4_10">예제 4-10</a></p>
+	<p><a href = "4_11">예제 4-11</a></p>
+	
+	<form action="4_0" method="get">
+		<input type="text" name="id" />
+		<input type="text" name="name" />
+		<input type="submit" value="4-0 전송" />
+	</form>
+	<%
+		String id="admin";
+		String name="홍길동";
+	%>
+	<p><a href = "4_0?id=${id}&name=<%=name%>">예제 4-0</a></p>
+	
+	<hr></hr>
+	
+	<form action="5_1" method="post">
+		<p>아이디 : <input type="text" name="id"></p>
+		<p>비밀번호 : <input type="text" name="passwd"></p>
+		<p><input type="submit" value="5-1 전송"></p>
+	</form>
+	<p><a href = "5_2">예제 5-2</a></p>
+	<p><a href = "5_3">예제 5-3</a></p>
+	
 </body>
 </html>
