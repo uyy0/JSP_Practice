@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Exam 4-6 Action Tag</title>
+<title>Exam 5-7 Implicit objects</title>
 </head>
 <body>
-	<jsp:useBean id="bean" class="chapter04.Calculator" />
 	<%
-		int m=bean.process(5);
-		out.print("5의 3제곱 : "+m);
+		out.println("오늘의 날짜 및 시각"+"<br>");
+		out.println(java.util.Calendar.getInstance().getTime());
+	
 	%>
 </body>
 </html>

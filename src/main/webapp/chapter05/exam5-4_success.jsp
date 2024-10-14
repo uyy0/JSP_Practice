@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Exam 4-6 Action Tag</title>
+<title>Exam 5-4 Implicit objects</title>
 </head>
 <body>
-	<jsp:useBean id="bean" class="chapter04.Calculator" />
-	<%
-		int m=bean.process(5);
-		out.print("5의 3제곱 : "+m);
-	%>
+	로그인을 성공했습니다!!
 </body>
 </html>
