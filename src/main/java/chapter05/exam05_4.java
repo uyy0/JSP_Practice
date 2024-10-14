@@ -24,9 +24,13 @@ public class exam05_4 extends HttpServlet{
 		String userid=request.getParameter("id");
 		String password=request.getParameter("passwd");
 		
-		if(userid.equals("관리자")&&password.equals("1234")){
-			response.sendRedirect("exam5_4_success");
-		} else {
+		if(userid != null || password != null) {
+			if(userid.equals("관리자")&&password.equals("1234")){
+				response.sendRedirect("exam5_4_success");
+			} else {
+				response.sendRedirect("exam5_4_failed");
+			}
+		} else{
 			response.sendRedirect("exam5_4_failed");
 		}
 	}
