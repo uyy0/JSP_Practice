@@ -36,4 +36,22 @@
   	</form-login-config>
   </login-config>
   
+  <!-- chapter11 -->
+  <!-- <error-page>  -->
+	<!-- <error-code>404</error-code>
+	<location>/chapter11/exam11-4_error.jsp</location> -->  
+  	<!--  <error-code>500</error-code>
+  	<location>/chapter11/exam11-4_error.jsp</location>-->
+  	<!--<exception-type>java.lang.Exception</exception-type>
+  	<location>/chapter11/exam11-5_error.jsp</location>
+  </error-page> -->
+  
+  <filter>
+  	<filter-name>exam12_1_Filter</filter-name>
+  	<filter-class>chapter12.exam12_1_Filter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>exam12_1_Filter</filter-name>
+  	<url-pattern>/12_1</url-pattern>	
+  </filter-mapping>
 </web-app>
