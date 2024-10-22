@@ -7,7 +7,7 @@
 <title>Exam 12-1 Filter</title>
 </head>
 <body>
-	<form action="12_1" method="post">
+	<form action="12_1_Filter" method="post">
 		<p> 이름 : <input type="text" name="name">
 		<input type="submit" value="전송"></p>
 	</form>
