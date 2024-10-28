@@ -58,12 +58,12 @@ public class exam16_repository {
 	public ArrayList<exam16_dto> getAllmember() throws Exception{
 		ArrayList<exam16_dto> arr = new ArrayList<exam16_dto>();
 		ResultSet rs = null;
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		Connection  conn = DBconn();
 		try {
 			String sql="select * from Member";
-			stmt=conn.createStatement();
-			rs=stmt.executeQuery(sql);
+			pstmt=conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
 			
 			while(rs.next()){
 				String id=rs.getString("id");
@@ -77,10 +77,55 @@ public class exam16_repository {
 				
 				arr.add(dto);
 			}
-		}catch(Exception e) {System.out.println("getAllmember 오류 발생.");}
+		}catch(Exception e) {
+			System.out.println("Member 테이블 호출이 실패했습니다.");
+			System.out.println("Exception : " + e.getMessage());
+		} finally {
+			if(rs!=null) {rs.close();}
+			if(pstmt!=null) {pstmt.close();}
+			if(conn!=null) {conn.close();}
+		}
 		
 		
 		return arr;
+	}
+	public void update(exam16_dto dto) throws Exception {
+		Connection conn = DBconn();
+		ResultSet rs=null;
+		PreparedStatement pstmt=null;
+		try {
+			String id = dto.getId();
+			String pw = dto.getPw();
+			String name = dto.getName();
+			String sql="select id,pw, from Member where id=?";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,id);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				String rId=rs.getString("id");
+				String rPw=rs.getString("pw");
+				
+				if(id.equals(rId)&&pw.equals(rPw)) {
+					sql="update Member set name=? where id=?";
+					pstmt=conn.prepareStatement(sql);
+					pstmt.setString(1, name);
+					pstmt.setString(2, id);
+					pstmt.executeUpdate();
+					System.out.println("Member 테이블을 수정했습니다.");
+				}else {
+					System.out.println("일치하는 비밀번호가 아닙니다.");
+				}
+			}else {
+				System.out.println("Member 테이블에 일치하는 아이디가 없습니다.");
+			}
+			
+		} catch (Exception e) {System.out.println("Exception : "+e.getMessage());
+		} finally {
+			if(rs!=null) {rs.close();}
+			if(pstmt!=null) {pstmt.close();}
+			if(conn!=null) {conn.close();}
+		}
 	}
 }
 

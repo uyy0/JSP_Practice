@@ -12,8 +12,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/16_4")
-public class exam16_4 extends HttpServlet{
+@WebServlet("/16_5")
+public class exam16_5 extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class exam16_4 extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		RequestDispatcher ds = req.getRequestDispatcher("chapter16/exam16-4.jsp");
+		RequestDispatcher ds = req.getRequestDispatcher("chapter16/exam16-5.jsp");
 		ds.forward(req, resp);
 	}
 
